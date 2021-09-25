@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image */
 
-        app = docker.build("vijay-gutta/besafe")
+        app = docker.build("vijay-gutta/besafe:${env.BUILD_TAG}")
     }
 
     stage('Test image') {
