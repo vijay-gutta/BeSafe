@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image */
 
-        app = docker.build("vijay-gutta/BeSafe")
+        app = docker.build("vijay-gutta/besafe")
     }
 
     stage('Test image') {
@@ -24,7 +24,7 @@ node {
         /* 
 			You would need to first register with DockerHub before you can push images to your account
 		*/
-        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
+        docker.withRegistry('https://registry.hub.docker.com', 'DockerHub') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
             } 
