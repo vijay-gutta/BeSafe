@@ -24,8 +24,7 @@ node {
         /* 
 			You would need to first register with DockerHub before you can push images to your account
 		*/
-        docker.withRegistry('vgutta01', 'DockerHub') {
-	    app.push("vgutta01")
+        docker.withRegistry('https://registry.hub.docker.com', 'DockerHub') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
             } 
