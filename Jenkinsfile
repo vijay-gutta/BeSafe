@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/vijay-gutta/besafe.git'
+        checkout scm
       }
     }
     stage('Building image') {
