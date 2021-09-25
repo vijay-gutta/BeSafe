@@ -30,4 +30,10 @@ node {
             } 
                 echo "Trying to Push Docker Build to DockerHub"
     }
+	stage('Remove image') {
+steps{
+sh "docker rmi $imagename:$BUILD_NUMBER"
+sh "docker rmi $imagename:latest"
+}
+}
 }
